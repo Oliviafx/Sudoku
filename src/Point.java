@@ -1,24 +1,24 @@
 /**
  * The coordinates for each tile
  *
- * Should have each x and y value range from 1-9
+ * Should have each r and c value range from 0-8
  *
  * Created by Olivia on 7/28/2017.
  */
 public class Point {
-    private int x;
-    private int y;
+    private int row;
+    private int col;
 
-    public Point(int x, int y){
-        this.x = x;
-        this.y = y;
+    public Point(int row, int col){
+        this.row = row;
+        this.col = col;
     }
 
-    public int getX(){
-        return x;
+    public int getRow(){
+        return row;
     }
 
-    public int getY(){
-        return y;
+    public int getCol(){
+        return col;
     }
 }

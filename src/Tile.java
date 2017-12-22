@@ -30,9 +30,14 @@ public class Tile {
 
     public boolean checkFill(){
         if(val != 0){
-            return true;
+            fill = true;
         }else{
-            return false;
+            fill = false;
         }
+
+        return fill;
     }
+
+
+
 }
