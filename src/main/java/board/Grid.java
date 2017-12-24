@@ -3,16 +3,14 @@
  *
  * Created by Olivia on 7/28/2017.
  */
-
-import javafx.*;
-import javafx.application.Application;
-
+package main.java.board;
 import java.util.HashMap;
 
 public class Grid {
     private HashMap<String, boolean[]> checker = new HashMap<String, boolean[]>();
 
-    public Grid(){
+
+    public Grid() {
         //initialize arrays for the checker
         for(int i = 0; i < 9; i++){
             String rowName = "row"+i;
@@ -22,9 +20,9 @@ public class Grid {
             checker.put(colName, new boolean[9]);
             checker.put(blockName, new boolean[9]);
         }
-
-        Application.launch();
     }
+
+
 
 
 
@@ -51,8 +49,21 @@ public class Grid {
 
     public void solve(){
         printGrid();
-        
+        pencilingIn();
 
+    }
+
+    public void crossHatching(Tile t){
+
+    }
+
+    public void pencilingIn(){
+        //do this at the beginning of solving
+        for(int r = 0; r < 9; r++){
+            for(int c = 0; c < 9; c++){
+                //how to get a tile with these coordinates??
+            }
+        }
     }
 
     //todo fix this lmao

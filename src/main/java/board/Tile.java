@@ -1,3 +1,7 @@
+package main.java.board;
+
+import main.java.board.Point;
+
 /**
  * Created by Olivia on 7/28/2017.
  */
@@ -15,6 +19,13 @@ public class Tile {
         fill = filled;
     }
 
+    public Tile(int row, int column, int value){
+        val = value;
+        this.row = row;
+        col = column;
+        fill = value == 0? false : true;
+    }
+
     public Point getCoord(){
         return coord;
     }
@@ -28,7 +39,7 @@ public class Tile {
         fill = true;
     }
 
-    public boolean checkFill(){
+    public boolean isEmpty(){
         if(val != 0){
             fill = true;
         }else{
