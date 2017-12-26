@@ -4,11 +4,18 @@
  * Created by Olivia on 7/28/2017.
  */
 package main.java.board;
+import main.java.archived.Point;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Scanner;
 
 public class Grid {
     private HashMap<String, boolean[]> checker = new HashMap<String, boolean[]>();
-
+    private HashMap<Point, Integer> solvedTiles = new HashMap<Point, Integer>();
+    private int[][] grid = new int[9][9];
 
     public Grid() {
         //initialize arrays for the checker
@@ -22,7 +29,36 @@ public class Grid {
         }
     }
 
+    /**
+     * A file will be in the following format:
+     *  <number> <number> <number>
+     *      Where the first number is the Tile's row,
+     *      the second number is the Tile's column,
+     *      and the third number is the Tile's value (0-9)
+     *
+     * This method will also set up the input in grid
+     *
+     * @param f
+     */
+    public void readInput(File f){
+        try {
+            Scanner sc = new Scanner(f);
+            while(sc.hasNextLine()){
+                String line = sc.nextLine();
+                String[] eachTile = line.split("\\s+"); //this should be length 3
+                assert(eachTile.length == 3);
+                Point tileCoord = new Point(Integer.parseInt(eachTile[0]),Integer.parseInt(eachTile[1]));
+                solvedTiles.put(tileCoord, Integer.parseInt(eachTile[2]));
+                grid[Integer.parseInt(eachTile[0])][Integer.parseInt(eachTile[1])] = Integer.parseInt(eachTile[2]);
+            }
 
+            System.out.println(Arrays.toString(grid));
+
+        } catch (FileNotFoundException e) {
+            System.out.println("File not found.");
+            e.printStackTrace();
+        }
+    }
 
 
 
@@ -48,7 +84,6 @@ public class Grid {
     }
 
     public void solve(){
-        printGrid();
         pencilingIn();
 
     }
@@ -67,18 +102,28 @@ public class Grid {
     }
 
     //todo fix this lmao
-    public void printGrid(){
+    public void printGrid(int[][] input){
         StringBuilder info = new StringBuilder();
         //loop through the rows
-        for(int i = 0; i < 9; i++){
-            info.append(i);
-            info.append(" ");
-            if(i == 2 || i == 5 || i == 8){
+        for(int r = 0; r < 9; r++){
+            for(int c = 0; c < 9; c++){
+                info.append(input[r][c]);
+                info.append(" ");
+
+                if(c == 2 || c == 5 ){
+                    info.append("  ");
+                }
+                if(c == 8){
+                    info.append("\n");
+                }
+            }
+
+            if(r == 2 || r == 5 ){
                 info.append("\n");
             }
         }
 
-       // System.out.println(info.toString());
+        System.out.println(info.toString());
     }
 
     public int[] determineSameBlock(int value){
@@ -109,5 +154,16 @@ public class Grid {
 
     public int[] getNearbyCols(Tile t){
         return determineSameBlock(t.getCoord().getCol());
+    }
+
+
+    public static void main(String[] args){
+        Grid g = new Grid();
+        g.grid[0][0] = 1;
+        g.grid[5][6] = 7;
+        g.grid[2][3] = 4;
+
+        g.printGrid(g.grid);
+
     }
 }

@@ -1,4 +1,4 @@
-package main.java.board;
+package main.java.archived;
 
 /**
  * A single 3x3 square amid a (standard) Sodoku Grid

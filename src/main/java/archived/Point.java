@@ -1,4 +1,4 @@
-package main.java.board;
+package main.java.archived;
 
 /**
  * The coordinates for each tile

@@ -1,4 +1,4 @@
-package main.java;
+package main.java.gui;
 
 import javafx.application.Application;
 import javafx.fxml.FXML;

@@ -1,4 +1,4 @@
-package main.java.board;
+package main.java.archived;
 
 /**
  * A column

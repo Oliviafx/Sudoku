@@ -1,11 +1,12 @@
 package main.java.board;
 
-import main.java.board.Point;
+import main.java.archived.Point;
 
 /**
  * Created by Olivia on 7/28/2017.
  */
 public class Tile {
+
     private Point coord;
     private int val, row, col, block;
     private boolean fill;
