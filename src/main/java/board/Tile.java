@@ -1,54 +1,76 @@
 package main.java.board;
 
-import main.java.archived.Point;
 
 /**
  * Created by Olivia on 7/28/2017.
  */
 public class Tile {
 
-    private Point coord;
-    private int val, row, col, block;
-    private boolean fill;
+    private int value;
+    private boolean[] options = new boolean[9]; //initializes false
 
-    public Tile(Point coordinate, int value, int row, int column, int block, boolean filled){
-        coord = coordinate;
-        val = value;
-        this.row = row;
-        col = column;
-        this.block = block;
-        fill = filled;
-    }
-
-    public Tile(int row, int column, int value){
-        val = value;
-        this.row = row;
-        col = column;
-        fill = value == 0? false : true;
-    }
-
-    public Point getCoord(){
-        return coord;
-    }
-
-    public int getVal(){
-        return val;
-    }
-
-    public void setVal(int value){
-        val = value;
-        fill = true;
-    }
-
-    public boolean isEmpty(){
-        if(val != 0){
-            fill = true;
-        }else{
-            fill = false;
+    public Tile(){
+        value = 0;
+        for(int i = 0; i < 9; i++){
+            options[i] = true;
         }
-
-        return fill;
     }
+
+    public Tile(int value){
+        this.value = value;
+        options[value-1] = true;
+    }
+
+    public int getValue(){
+        return this.value;
+    }
+
+    public boolean[] getOptions(){
+        return options;
+    }
+
+    /**
+     * Sets an option to true
+     *
+     * setOption(3) states that this tile
+     *  can possibly be 3
+     *
+     * @param index the value that is valid,
+     *              a value from 1-9
+     */
+    public void setOption(int index){
+        options[index-1] = true;
+    }
+
+    /**
+     * Sets an option to false, usually
+     * after getting the actual value
+     *
+     * deleteOption(3) removes 3 from being
+     *  a valid option
+     *
+     * @param index the value that is no
+     *              longer valid, a value
+     *              from 1-9
+     */
+    public void deleteOption(int index){
+        options[index-1] = false;
+    }
+
+    /**
+     * Sets all values in options to false
+     * besides the one at index-1
+     * @param index
+     */
+    public void valueFound(int index){
+        for(int i = 0; i < 9; i++){
+            if(i == value-1){
+                options[i] = true;
+            }
+            options[i] = false;
+        }
+    }
+
 
 
 
