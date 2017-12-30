@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="497fb4e5-ce28-45da-af45-a1c00da0f49c" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/board/Grid.java" afterPath="$PROJECT_DIR$/src/main/java/board/Grid.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/board/Tile.java" afterPath="$PROJECT_DIR$/src/main/java/board/Tile.java" />
     </list>
@@ -30,18 +31,34 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file leaf-file-name="Tile.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/board/Tile.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="748">
+              <caret line="66" column="35" selection-start-line="66" selection-start-column="35" selection-end-line="66" selection-end-column="35" />
+              <folding>
+                <element signature="docComment;class#Tile#0" expanded="false" />
+                <element signature="docComment;method#setOption#0;class#Tile#0" expanded="false" />
+                <element signature="docComment;method#deleteOption#0;class#Tile#0" expanded="false" />
+                <element signature="docComment;method#valueFound#0;class#Tile#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Grid.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/board/Grid.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-15">
-              <caret line="66" column="7" selection-start-line="66" selection-start-column="7" selection-end-line="66" selection-end-column="7" />
+            <state relative-caret-position="1232">
+              <caret line="100" column="13" selection-start-line="100" selection-start-column="13" selection-end-line="100" selection-end-column="13" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="imports" expanded="true" />
                 <element signature="method#Grid#0;class#Grid#0" expanded="false" />
                 <element signature="docComment;method#readInput#0;class#Grid#0" expanded="false" />
                 <element signature="method#readInput#0;class#Grid#0" expanded="false" />
-                <element signature="method#toString#0;class#Grid#0" expanded="false" />
+                <element signature="docComment;method#crossHatching#0;class#Grid#0" expanded="false" />
+                <element signature="docComment;method#pencilingIn#0;class#Grid#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -329,7 +346,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -380,58 +396,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Sudoku" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Sudoku" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Sudoku" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Sudoku" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="board" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -778,7 +747,6 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32893288" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug Logs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -803,6 +771,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32893288" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32893288" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -856,22 +825,42 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/board/Tile.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" column="67" selection-start-line="9" selection-start-column="67" selection-end-line="9" selection-end-column="67" />
+          <folding>
+            <element signature="docComment;class#Tile#0" expanded="false" />
+            <element signature="docComment;method#setOption#0;class#Tile#0" expanded="false" />
+            <element signature="docComment;method#deleteOption#0;class#Tile#0" expanded="false" />
+            <element signature="docComment;method#valueFound#0;class#Tile#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/board/Grid.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="method#Grid#0;class#Grid#0" expanded="false" />
+            <element signature="docComment;method#readInput#0;class#Grid#0" expanded="false" />
+            <element signature="method#readInput#0;class#Grid#0" expanded="false" />
+            <element signature="docComment;method#crossHatching#0;class#Grid#0" expanded="false" />
+            <element signature="docComment;method#pencilingIn#0;class#Grid#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/board/Tile.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="docComment;class#Tile#0" expanded="false" />
-            <element signature="e#426#427#0" expanded="true" />
-            <element signature="e#459#460#0" expanded="true" />
-            <element signature="e#495#496#0" expanded="true" />
-            <element signature="e#525#526#0" expanded="true" />
             <element signature="docComment;method#setOption#0;class#Tile#0" expanded="false" />
-            <element signature="e#774#775#0" expanded="true" />
-            <element signature="e#813#814#0" expanded="true" />
             <element signature="docComment;method#deleteOption#0;class#Tile#0" expanded="false" />
-            <element signature="e#1142#1143#0" expanded="true" />
-            <element signature="e#1182#1183#0" expanded="true" />
             <element signature="docComment;method#valueFound#0;class#Tile#0" expanded="false" />
-            <element signature="method#valueFound#0;class#Tile#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -886,7 +875,8 @@
             <element signature="method#Grid#0;class#Grid#0" expanded="false" />
             <element signature="docComment;method#readInput#0;class#Grid#0" expanded="false" />
             <element signature="method#readInput#0;class#Grid#0" expanded="false" />
-            <element signature="method#toString#0;class#Grid#0" expanded="false" />
+            <element signature="docComment;method#crossHatching#0;class#Grid#0" expanded="false" />
+            <element signature="docComment;method#pencilingIn#0;class#Grid#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -897,18 +887,9 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="docComment;class#Tile#0" expanded="false" />
-            <element signature="e#426#427#0" expanded="true" />
-            <element signature="e#459#460#0" expanded="true" />
-            <element signature="e#495#496#0" expanded="true" />
-            <element signature="e#525#526#0" expanded="true" />
             <element signature="docComment;method#setOption#0;class#Tile#0" expanded="false" />
-            <element signature="e#774#775#0" expanded="true" />
-            <element signature="e#813#814#0" expanded="true" />
             <element signature="docComment;method#deleteOption#0;class#Tile#0" expanded="false" />
-            <element signature="e#1142#1143#0" expanded="true" />
-            <element signature="e#1182#1183#0" expanded="true" />
             <element signature="docComment;method#valueFound#0;class#Tile#0" expanded="false" />
-            <element signature="method#valueFound#0;class#Tile#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -941,7 +922,8 @@
             <element signature="method#Grid#0;class#Grid#0" expanded="false" />
             <element signature="docComment;method#readInput#0;class#Grid#0" expanded="false" />
             <element signature="method#readInput#0;class#Grid#0" expanded="false" />
-            <element signature="method#toString#0;class#Grid#0" expanded="false" />
+            <element signature="docComment;method#crossHatching#0;class#Grid#0" expanded="false" />
+            <element signature="docComment;method#pencilingIn#0;class#Grid#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -966,18 +948,9 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="docComment;class#Tile#0" expanded="false" />
-            <element signature="e#426#427#0" expanded="true" />
-            <element signature="e#459#460#0" expanded="true" />
-            <element signature="e#495#496#0" expanded="true" />
-            <element signature="e#525#526#0" expanded="true" />
             <element signature="docComment;method#setOption#0;class#Tile#0" expanded="false" />
-            <element signature="e#774#775#0" expanded="true" />
-            <element signature="e#813#814#0" expanded="true" />
             <element signature="docComment;method#deleteOption#0;class#Tile#0" expanded="false" />
-            <element signature="e#1142#1143#0" expanded="true" />
-            <element signature="e#1182#1183#0" expanded="true" />
             <element signature="docComment;method#valueFound#0;class#Tile#0" expanded="false" />
-            <element signature="method#valueFound#0;class#Tile#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -991,31 +964,6 @@
     <entry file="file://$PROJECT_DIR$/src/grid.fxml" />
     <entry file="file://$PROJECT_DIR$/src/Grid.java" />
     <entry file="file://$PROJECT_DIR$/src/Grid.java" />
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="176">
-            <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="0">
-            <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          </first_editor>
-          <second_editor>
-            <js_state />
-          </second_editor>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Point.java" />
     <entry file="file://$PROJECT_DIR$/src/Column.java" />
     <entry file="file://$PROJECT_DIR$/src/Block.java" />
@@ -1074,7 +1022,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1082,9 +1029,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-565">
           <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-          <folding>
-            <element signature="docComment;class#GUI#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1093,45 +1037,64 @@
         <state relative-caret-position="291">
           <caret line="234" column="18" selection-start-line="234" selection-start-column="18" selection-end-line="234" selection-end-column="18" />
           <folding>
-            <element signature="e#10065#10066#0" expanded="true" />
-            <element signature="e#10148#10149#0" expanded="true" />
+            <element signature="e#10065#10066#0" expanded="false" />
+            <element signature="e#10148#10149#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/board/Tile.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="9" column="67" selection-start-line="9" selection-start-column="67" selection-end-line="9" selection-end-column="67" />
+        <state relative-caret-position="748">
+          <caret line="66" column="35" selection-start-line="66" selection-start-column="35" selection-end-line="66" selection-end-column="35" />
           <folding>
             <element signature="docComment;class#Tile#0" expanded="false" />
-            <element signature="e#426#427#0" expanded="true" />
-            <element signature="e#459#460#0" expanded="true" />
-            <element signature="e#495#496#0" expanded="true" />
-            <element signature="e#525#526#0" expanded="true" />
             <element signature="docComment;method#setOption#0;class#Tile#0" expanded="false" />
-            <element signature="e#774#775#0" expanded="true" />
-            <element signature="e#813#814#0" expanded="true" />
             <element signature="docComment;method#deleteOption#0;class#Tile#0" expanded="false" />
-            <element signature="e#1142#1143#0" expanded="true" />
-            <element signature="e#1182#1183#0" expanded="true" />
             <element signature="docComment;method#valueFound#0;class#Tile#0" expanded="false" />
-            <element signature="method#valueFound#0;class#Tile#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="352">
+            <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+      <provider editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor>
+            <js_state />
+          </second_editor>
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/board/Grid.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-15">
-          <caret line="66" column="7" selection-start-line="66" selection-start-column="7" selection-end-line="66" selection-end-column="7" />
+        <state relative-caret-position="1232">
+          <caret line="100" column="13" selection-start-line="100" selection-start-column="13" selection-end-line="100" selection-end-column="13" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="method#Grid#0;class#Grid#0" expanded="false" />
             <element signature="docComment;method#readInput#0;class#Grid#0" expanded="false" />
             <element signature="method#readInput#0;class#Grid#0" expanded="false" />
-            <element signature="method#toString#0;class#Grid#0" expanded="false" />
+            <element signature="docComment;method#crossHatching#0;class#Grid#0" expanded="false" />
+            <element signature="docComment;method#pencilingIn#0;class#Grid#0" expanded="false" />
           </folding>
         </state>
       </provider>

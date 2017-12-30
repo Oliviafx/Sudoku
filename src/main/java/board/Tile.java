@@ -8,10 +8,11 @@ public class Tile {
 
     private int value;
     private boolean[] options = new boolean[9]; //initializes false
+    private int n = options.length;
 
     public Tile(){
         value = 0;
-        for(int i = 0; i < 9; i++){
+        for(int i = 0; i < n; i++){
             options[i] = true;
         }
     }
@@ -63,11 +64,8 @@ public class Tile {
      * @param index
      */
     public void valueFound(int index){
-        for(int i = 0; i < 9; i++){
-            if(i == value-1){
-                options[i] = true;
-            }
-            options[i] = false;
+        for(int i = 0; i < n; i++){
+            options[i] = (i == value - 1);
         }
     }
 

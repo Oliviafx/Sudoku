@@ -68,6 +68,9 @@ public class Grid {
      * @param t
      */
     public void crossHatching(Tile t){
+        int value = t.getValue();
+
+        //determine if any of the
 
     }
 
@@ -84,23 +87,19 @@ public class Grid {
     public String toString(){
         StringBuilder info = new StringBuilder();
 
-        for(int r = 0; r < 9; r++){
-            for(int c = 0; c < 9; c++){
+        for(int r = 0; r < grid.length; r++){
+            for(int c = 0; c < grid[r].length; c++){
                 Tile t = grid[r][c];
-                info.append(t.getValue());
-                info.append(" ");
+                info.append(t.getValue()).append(" ");
 
-                if(c == 2 || c == 5 ){
-                    info.append("  ");
-                }
-                if(c == 8){
-                    info.append("\n");
+                if(c % 3 == 2){
+                    info.append(" ");
                 }
             }
-
-            if(r == 2 || r == 5 ){
+            if(r % 3 == 2){
                 info.append("\n");
             }
+            info.append("\n");
         }
 
         return info.toString();
