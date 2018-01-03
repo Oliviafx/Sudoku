@@ -9,17 +9,42 @@ public class Tile {
     private int value;
     private boolean[] options = new boolean[9]; //initializes false
     private int n = options.length;
+    private boolean guaranteed;
 
+    /**
+     * This constructor is used on set up
+     * value auto set to 0
+     */
     public Tile(){
         value = 0;
         for(int i = 0; i < n; i++){
             options[i] = true;
         }
+        guaranteed = false;
     }
 
+    /**
+     * This constructor is used on set up
+     * Values are set, guaranteed
+     *
+     * @param value
+     */
     public Tile(int value){
         this.value = value;
         options[value-1] = true;
+        guaranteed = true;
+    }
+
+    /**
+     * This constructor is used when solving
+     * values are set, not necessarily guaranteed
+     *
+     * @param value
+     * @param isGuaranteed
+     */
+    public Tile(int value, boolean isGuaranteed){
+        this.value = value;
+        guaranteed = isGuaranteed;
     }
 
     public int getValue(){
@@ -69,7 +94,9 @@ public class Tile {
         }
     }
 
-
+    public boolean isValueSet(){
+        return guaranteed;
+    }
 
 
 }

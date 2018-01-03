@@ -80,7 +80,7 @@ public class Grid {
      *  no longer possible for a tile
      */
     public void pencilingIn(){
-
+        //determine options
     }
 
 
