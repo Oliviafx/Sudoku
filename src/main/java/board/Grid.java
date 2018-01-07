@@ -9,10 +9,11 @@ import main.java.archived.Point;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Arrays;
-import java.util.Scanner;
+//import java.util.Scanner;
 
 public class Grid {
-    Tile[][] grid = new Tile[9][9];
+    private int n = 9;
+    Tile[][] grid = new Tile[n][n];
 
     public Grid() {
         for(int r = 0; r < 9; r++){
@@ -52,6 +53,74 @@ public class Grid {
             e.printStackTrace();
         }
         */
+    }
+
+
+    /*
+    public int bruteForce(int r, int c){
+        Tile t = grid[r][c];
+        boolean[] options = t.getOptions();
+        for(int i = 0; i < options.length; i++){
+            if(options[i]){
+                t = new Tile(i+1, false);
+                //set other options to not allow this one?
+
+                break; //maybe instead of breaking just return recursively here?
+            }
+        }
+
+        return 0; //placeholder return to just get it to stop screaming
+
+
+    }
+    */
+
+    public int bruteForce(int r, int c){
+
+        //out of bounds
+        if(r >= n){
+            return 0;
+        }
+
+        Tile t = grid[r][c];
+
+        //if value is set, go to next value
+        if(t.isValueSet()){
+            return bruteForce(r+((c++)/n), (c++)%n);
+        }
+
+        //set options
+        boolean[] options = t.getOptions();
+        //figure out options for this
+        // tile based off row, col, block
+
+        //row & col
+        for(int i = 0; i < n; i++){
+            //row
+            if(grid[r][i].getValue() != 0){
+                options[grid[r][i].getValue()-1] = false;
+            }
+
+            //col
+            if(grid[i][c].getValue() != 0) {
+                options[grid[i][c].getValue() - 1] = false;
+            }
+
+        }
+
+        //block
+        //?????
+
+        //time for some cray cray
+        for(int i = 0; i< options.length; i++){
+            if(options[i]){
+                t = new Tile(i+1, false);
+                grid[r][c] = new Tile(i+1, false);
+                return bruteForce(r+((c++)/n), (c++)%n);
+            }
+        }
+
+        return 0; //placeholder
     }
 
 
@@ -110,9 +179,46 @@ public class Grid {
 
     public static void main(String[] args){
         Grid g = new Grid();
-        g.grid[0][0] = new Tile(1);
-        g.grid[5][6] = new Tile(7);
-        g.grid[2][3] = new Tile(4);
+        g.grid[0][0] = new Tile(3);
+        g.grid[0][2] = new Tile(6);
+        g.grid[0][6] = new Tile(8);
+        g.grid[0][8] = new Tile(9);
+
+        g.grid[1][2] = new Tile(2);
+        g.grid[1][5] = new Tile(9);
+
+        g.grid[2][2] = new Tile(5);
+        g.grid[2][5] = new Tile(6);
+        g.grid[2][7] = new Tile(2);
+
+        g.grid[3][1] = new Tile(2);
+        g.grid[3][4] = new Tile(7);
+        g.grid[3][8] = new Tile(3);
+
+        g.grid[4][3] = new Tile(1);
+        g.grid[4][5] = new Tile(5);
+
+        g.grid[5][0] = new Tile(1);
+        g.grid[5][4] = new Tile(2);
+        g.grid[5][7] = new Tile(8);
+
+        g.grid[6][1] = new Tile(4);
+        g.grid[6][3] = new Tile(5);
+        g.grid[6][6] = new Tile(2);
+
+        g.grid[7][3] = new Tile(4);
+        g.grid[7][6] = new Tile(1);
+
+        g.grid[8][0] = new Tile(8);
+        g.grid[8][2] = new Tile(3);
+        g.grid[8][6] = new Tile(6);
+        g.grid[8][8] = new Tile(5);
+
+        System.out.println(g.toString());
+
+        System.out.println("Solving... \n\n\n\n\n");
+
+        int value = g.bruteForce(0,0);
 
         System.out.println(g.toString());
 

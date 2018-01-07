@@ -1,5 +1,6 @@
 package main.java.gui;
 
+/*
 import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,12 +15,13 @@ import javafx.stage.Window;
 
 import java.io.IOException;
 import java.net.URL;
+*/
 
 /**
  * Created by Olivia on 12/23/2017.
  */
-public class GUI extends Application{
-
+public class GUI {//} extends Application{
+/*
     private Window window;
 
     private Canvas canvas;
@@ -78,5 +80,5 @@ public class GUI extends Application{
         if(!info.isShowing()) info.show();
 
     }
-
+*/
 }
