@@ -75,18 +75,31 @@ public class Grid {
     }
     */
 
-    public int bruteForce(int r, int c){
+    /**
+     * A function that determines if the board is solvable
+     *
+     * Uses brute force.
+     *
+     * This function has the side effect of changing
+     * the internal array of the grid object to the
+     * solved array.
+     *
+     * @param r The row of the tile
+     * @param c The column of the tile
+     * @return true if the grid is solvable
+     */
+    public boolean isSolvable(int r, int c){
 
         //out of bounds
         if(r >= n){
-            return 0;
+            return true; //all tiles in the board have been solved
         }
 
         Tile t = grid[r][c];
 
         //if value is set, go to next value
         if(t.isValueSet()){
-            return bruteForce(r+((c++)/n), (c++)%n);
+            return isSolvable(r+((c+1)/n), (c+1)%n);
         }
 
         //set options
@@ -110,17 +123,29 @@ public class Grid {
 
         //block
         //?????
+        int startRow = 3 * (r / 3);
+        int startCol = 3 * (c / 3);
+        for(int row = startRow; row < startRow + 3; row++){
+            for(int col = startCol; col < startCol + 3; col++){
+                Tile inspect = grid[row][col];
+                if(inspect.getValue() != 0){
+                    options[inspect.getValue()-1] = false;
+                }
+            }
+        }
+
 
         //time for some cray cray
         for(int i = 0; i< options.length; i++){
             if(options[i]){
-                t = new Tile(i+1, false);
                 grid[r][c] = new Tile(i+1, false);
-                return bruteForce(r+((c++)/n), (c++)%n);
+                if(isSolvable(r+((c+1)/n), (c+1)%n)){
+                    return true;
+                }
             }
         }
 
-        return 0; //placeholder
+        return false; //placeholder
     }
 
 
@@ -216,11 +241,15 @@ public class Grid {
 
         System.out.println(g.toString());
 
-        System.out.println("Solving... \n\n\n\n\n");
+        System.out.println("Solving... \n\n\n");
 
-        int value = g.bruteForce(0,0);
+        boolean isSolvable = g.isSolvable(0,0);
+
 
         System.out.println(g.toString());
+
+
+        System.out.println("isSolvable: " + isSolvable);
 
 
     }
