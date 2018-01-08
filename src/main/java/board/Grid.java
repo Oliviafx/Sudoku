@@ -103,36 +103,7 @@ public class Grid {
         }
 
         //set options
-        boolean[] options = t.getOptions();
-        //figure out options for this
-        // tile based off row, col, block
-
-        //row & col
-        for(int i = 0; i < n; i++){
-            //row
-            if(grid[r][i].getValue() != 0){
-                options[grid[r][i].getValue()-1] = false;
-            }
-
-            //col
-            if(grid[i][c].getValue() != 0) {
-                options[grid[i][c].getValue() - 1] = false;
-            }
-
-        }
-
-        //block
-        //?????
-        int startRow = 3 * (r / 3);
-        int startCol = 3 * (c / 3);
-        for(int row = startRow; row < startRow + 3; row++){
-            for(int col = startCol; col < startCol + 3; col++){
-                Tile inspect = grid[row][col];
-                if(inspect.getValue() != 0){
-                    options[inspect.getValue()-1] = false;
-                }
-            }
-        }
+        boolean[] options = getOptions(r, c);
 
 
         //time for some cray cray
@@ -200,7 +171,54 @@ public class Grid {
     }
 
 
+    private boolean[] getOptions(int r, int c){
+        Tile t = grid[r][c];
+        boolean[] options = new boolean[n];
 
+        if(t.isValueSet()){ //if value is set
+            for(int i = 0; i < n; i++){
+                options[i] = (i == t.getValue() - 1);
+            }
+            return options;
+        }
+
+
+        //initialize all possible to true
+        for(int i = 0; i < n; i++){
+            options[i] = true;
+        }
+
+        //row & col
+        for(int i = 0; i < n; i++){
+            //row
+            if(grid[r][i].getValue() != 0){
+                options[grid[r][i].getValue()-1] = false;
+            }
+
+            //col
+            if(grid[i][c].getValue() != 0) {
+                options[grid[i][c].getValue() - 1] = false;
+            }
+
+        }
+
+        //block
+        //?????
+        int startRow = 3 * (r / 3);
+        int startCol = 3 * (c / 3);
+        for(int row = startRow; row < startRow + 3; row++){
+            for(int col = startCol; col < startCol + 3; col++){
+                Tile inspect = grid[row][col];
+                if(inspect.getValue() != 0){
+                    options[inspect.getValue()-1] = false;
+                }
+            }
+        }
+
+
+        return options;
+
+    }
 
     public static void main(String[] args){
         Grid g = new Grid();
