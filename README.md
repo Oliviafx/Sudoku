@@ -1,6 +1,6 @@
 # Sudoku :octocat:
 
-This both is a sudoku solver. 
+This is currently a sudoku solver. 
 
 As per classic sudoku rules, in each row, column, and block can only have each of the numbers 1-9 once, without repeats. 
 
