@@ -4,12 +4,9 @@
  * Created by Olivia on 7/28/2017.
  */
 package main.java.board;
-import main.java.archived.Point;
 
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Arrays;
-//import java.util.Scanner;
+
 
 public class Grid {
     private int n = 9;
@@ -56,25 +53,6 @@ public class Grid {
     }
 
 
-    /*
-    public int bruteForce(int r, int c){
-        Tile t = grid[r][c];
-        boolean[] options = t.getOptions();
-        for(int i = 0; i < options.length; i++){
-            if(options[i]){
-                t = new Tile(i+1, false);
-                //set other options to not allow this one?
-
-                break; //maybe instead of breaking just return recursively here?
-            }
-        }
-
-        return 0; //placeholder return to just get it to stop screaming
-
-
-    }
-    */
-
     /**
      * A function that determines if the board is solvable
      *
@@ -88,7 +66,7 @@ public class Grid {
      * @param c The column of the tile
      * @return true if the grid is solvable
      */
-    public boolean isSolvable(int r, int c){
+    private boolean isSolvable(int r, int c){
 
         //out of bounds
         if(r >= n){
@@ -109,7 +87,10 @@ public class Grid {
         //time for some cray cray
         for(int i = 0; i< options.length; i++){
             if(options[i]){
-                grid[r][c] = new Tile(i+1, false);
+                //grid[r][c] = new Tile(i+1, false);
+                t.setValue(i+1);
+
+
                 if(isSolvable(r+((c+1)/n), (c+1)%n)){
                     return true;
                 }
@@ -119,35 +100,9 @@ public class Grid {
         return false; //placeholder
     }
 
-
-
-    public void solve(){
-        pencilingIn();
-
+    public boolean solve(){
+        return isSolvable(0, 0);
     }
-
-    /**
-     * looking @ rows & cols
-     * to determine if something
-     * is possible
-     * @param t
-     */
-    public void crossHatching(Tile t){
-        int value = t.getValue();
-
-        //determine if any of the
-
-    }
-
-    /**
-     *  The penciling in method involves
-     *  crossing off options that are
-     *  no longer possible for a tile
-     */
-    public void pencilingIn(){
-        //determine options
-    }
-
 
     public String toString(){
         StringBuilder info = new StringBuilder();
@@ -175,14 +130,6 @@ public class Grid {
         Tile t = grid[r][c];
         boolean[] options = new boolean[n];
 
-        if(t.isValueSet()){ //if value is set
-            for(int i = 0; i < n; i++){
-                options[i] = (i == t.getValue() - 1);
-            }
-            return options;
-        }
-
-
         //initialize all possible to true
         for(int i = 0; i < n; i++){
             options[i] = true;
@@ -191,25 +138,24 @@ public class Grid {
         //row & col
         for(int i = 0; i < n; i++){
             //row
-            if(grid[r][i].getValue() != 0){
+            if( i < c || grid[r][i].isValueSet() ){
                 options[grid[r][i].getValue()-1] = false;
             }
 
             //col
-            if(grid[i][c].getValue() != 0) {
+            if(i < r || grid[i][c].isValueSet()) {
                 options[grid[i][c].getValue() - 1] = false;
             }
 
         }
 
         //block
-        //?????
         int startRow = 3 * (r / 3);
         int startCol = 3 * (c / 3);
         for(int row = startRow; row < startRow + 3; row++){
             for(int col = startCol; col < startCol + 3; col++){
                 Tile inspect = grid[row][col];
-                if(inspect.getValue() != 0){
+                if( row < r || ( row == r  && col < c ) || inspect.isValueSet()){
                     options[inspect.getValue()-1] = false;
                 }
             }
@@ -222,46 +168,35 @@ public class Grid {
 
     public static void main(String[] args){
         Grid g = new Grid();
-        g.grid[0][0] = new Tile(3);
-        g.grid[0][2] = new Tile(6);
-        g.grid[0][6] = new Tile(8);
-        g.grid[0][8] = new Tile(9);
 
-        g.grid[1][2] = new Tile(2);
-        g.grid[1][5] = new Tile(9);
+        int[][] values = { {0, 0, 9, 0, 1, 0, 0, 0, 0},
+                {7, 0, 0, 0, 0, 4, 8, 0, 6},
+                {0, 0, 0, 0, 0, 0, 7, 0, 1},
+                {1, 0, 0, 8, 9, 0, 0, 0, 0},
+                {0, 2, 0, 0, 5, 0, 0, 3, 0},
+                {0, 0, 0, 0, 4, 6, 0, 0, 8},
+                {5, 0, 2, 0, 0, 0, 0, 0, 0},
+                {4, 0, 1, 6, 0, 0, 0, 0, 7},
+                {0, 0, 0, 0, 3, 0, 5, 0, 0}
 
-        g.grid[2][2] = new Tile(5);
-        g.grid[2][5] = new Tile(6);
-        g.grid[2][7] = new Tile(2);
 
-        g.grid[3][1] = new Tile(2);
-        g.grid[3][4] = new Tile(7);
-        g.grid[3][8] = new Tile(3);
+        };
 
-        g.grid[4][3] = new Tile(1);
-        g.grid[4][5] = new Tile(5);
+        for(int r = 0; r < g.n; r++){
+            for(int c = 0; c < g.n; c++){
+                int val = values[r][c];
+                if(val != 0){
+                    g.grid[r][c] = new Tile(val);
+                }
+            }
+        }
 
-        g.grid[5][0] = new Tile(1);
-        g.grid[5][4] = new Tile(2);
-        g.grid[5][7] = new Tile(8);
-
-        g.grid[6][1] = new Tile(4);
-        g.grid[6][3] = new Tile(5);
-        g.grid[6][6] = new Tile(2);
-
-        g.grid[7][3] = new Tile(4);
-        g.grid[7][6] = new Tile(1);
-
-        g.grid[8][0] = new Tile(8);
-        g.grid[8][2] = new Tile(3);
-        g.grid[8][6] = new Tile(6);
-        g.grid[8][8] = new Tile(5);
 
         System.out.println(g.toString());
 
         System.out.println("Solving... \n\n\n");
 
-        boolean isSolvable = g.isSolvable(0,0);
+        boolean isSolvable = g.solve();
 
 
         System.out.println(g.toString());

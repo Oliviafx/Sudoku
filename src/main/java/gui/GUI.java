@@ -20,8 +20,8 @@ import java.net.URL;
 /**
  * Created by Olivia on 12/23/2017.
  */
-public class GUI {//} extends Application{
-/*
+public class GUI { /*extends Application{
+
     private Window window;
 
     private Canvas canvas;
